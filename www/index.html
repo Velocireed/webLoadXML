@@ -29,6 +29,7 @@
           </ul>
         </div>
       </nav>
+	  <!--
       <div class="row">
   			<div class="col s12 m6">
   				<div class="card blue-grey darken-1">
@@ -44,12 +45,11 @@
   				</div>
   			</div>
   			</div>
-  		</div>
+  		</div>-->
         <!--<script type="text/javascript" src="cordova.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     		<script>
-
     			var xhttp = new XMLHttpRequest();
     			xhttp.onreadystatechange = function() {
     				if (this.readyState == 4 && this.status == 200) {
@@ -58,54 +58,71 @@
     			};
     			xhttp.open("GET", "test1.xml", true);
     			xhttp.send();
-          function pagePrinter(elem){
-            var open = document.createElement("div");
-              open.className = "row";
-            var color = document.createElement("div");
-              color.className = "card blue-grey darken-1";
-            var col = document.createElement("div");
-              col.className = "col s12 m6";
-            var content = document.createElement("div");
-              content.className = "card-content white-text";
-            var title = document.createElement("span");
-              title.className = "card-title";
-            var twords = document.createElement("p");
-              twords.id = "Title";
-            var author = document.createElement("p");
-              author.id = "Author";
-            var abstract = document.createElement("p");
-              abstract.id = "Abstract";
-            var action = document.createElement("div");
-
-
-            //var t = document.createTextNode("Hello");
-
-
-            document.body.appendChild(open);
-            open.appendChild(col);
-            col.appendChild(color);
-            color.appendChild(content);
-            content.appendChild(title);
-            content.appendChild(author);
-            content.appendChild(abstract);
-            title.appendChild(twords);
-            //content.appendChild(t);
-
-
-          }
-          onload = pagePrinter();
+      
     			function myFunction(xml) {
+					
     				var xmlDoc = xml.responseXML;
+					
+					var x, i, j, txt, xmlDoc, y; 
+					xmlDoc = xml.responseXML;
+					txt = "";
+					x = xmlDoc.getElementsByTagName("title");
+					y = xmlDoc.getElementsByTagName("article");
+					/*for (i = 0; i < x.length; i++) { 
+						txt += x[i].childNodes[0].nodeValue + "<br>";
+					}*/
+					for (i = 0; i < y.length; i++) { 
+						//for (j = 0; j < y.get
+						var open = document.createElement("div");
+							open.className = "row";
+						var color = document.createElement("div");
+							color.className = "card blue-grey darken-1";
+						var col = document.createElement("div");
+							col.className = "col s12 m6";
+						var content = document.createElement("div");
+							content.className = "card-content white-text";
+						var title = document.createElement("span");
+							title.className = "card-title";
+						var twords = document.createElement("p");
+							twords.id = "Title";
+						var author = document.createElement("p");
+							author.id = "Author";
+						var abstract = document.createElement("p");
+							abstract.id = "Abstract";
+						var action = document.createElement("div");
+							action.className = "card-action";
+						var linka = document.createElement("a");
+							linka.href = "#";
+						var linkat = document.createTextNode("Save for Later");
+						var linkb = document.createElement("a");
+							linkb.href = "#";
+						var linkbt = document.createTextNode("Read More");
+						var demo = document.createElement("p");
+							demo.id = "demo";	
+						document.body.appendChild(open);
+						open.appendChild(col);
+						col.appendChild(color);
+						color.appendChild(content);
+						content.appendChild(title);
+						content.appendChild(author);
+						content.appendChild(abstract);
+						content.appendChild(action);
+						action.appendChild(linka);
+						linka.appendChild(linkat);
+						action.appendChild(linkb);
+						linkb.appendChild(linkbt);
+						title.appendChild(twords);
+						content.appendChild(demo);
+					//}
+					
     				document.getElementById("Title").innerHTML =
     				xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-    				//xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
-    				//xmlDoc.getElementsByTagName("abstract")[0].childNodes[0].nodeValue;
     				document.getElementById("Author").innerHTML =
     				xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
     				document.getElementById("Abstract").innerHTML =
     				xmlDoc.getElementsByTagName("abstract")[0].childNodes[0].nodeValue;
+					}
     			}
-
     		</script>
     </body>
 </html>
