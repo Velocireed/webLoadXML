@@ -47,9 +47,11 @@
   			</div>
   		</div>-->
         <!--<script type="text/javascript" src="cordova.js"></script>-->
+		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    		<script>
+    		<script src="js/Scripts.js"></script>
+			<script>
     			var xhttp = new XMLHttpRequest();
     			xhttp.onreadystatechange = function() {
     				if (this.readyState == 4 && this.status == 200) {
@@ -63,16 +65,15 @@
 					
     				var xmlDoc = xml.responseXML;
 					
-					var x, i, j, txt, xmlDoc, y; 
+					var x, i, j, txt, xmlDoc, y, z, id;
+				
 					xmlDoc = xml.responseXML;
 					txt = "";
-					x = xmlDoc.getElementsByTagName("title");
-					y = xmlDoc.getElementsByTagName("article");
-					/*for (i = 0; i < x.length; i++) { 
-						txt += x[i].childNodes[0].nodeValue + "<br>";
-					}*/
-					for (i = 0; i < y.length; i++) { 
-						//for (j = 0; j < y.get
+					x = xmlDoc.getElementsByTagName("article");
+					//y = ;
+					
+					for (i = 0; i < x.length; i++) { 
+						
 						var open = document.createElement("div");
 							open.className = "row";
 						var color = document.createElement("div");
@@ -93,9 +94,11 @@
 							action.className = "card-action";
 						var linka = document.createElement("a");
 							linka.href = "#";
-						var linkat = document.createTextNode("Save for Later");
+							linka.className = "waves-effect";
+						var linkat = document.createTextNode("Read Later");
 						var linkb = document.createElement("a");
 							linkb.href = "#";
+							linkb.className = "waves-effect";
 						var linkbt = document.createTextNode("Read More");
 						var demo = document.createElement("p");
 							demo.id = "demo";	
@@ -114,13 +117,14 @@
 						title.appendChild(twords);
 						content.appendChild(demo);
 					//}
-					
+					var z = xmlDoc.getElementsByTagName("article").nextSibling;
     				document.getElementById("Title").innerHTML =
     				xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
     				document.getElementById("Author").innerHTML =
     				xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
     				document.getElementById("Abstract").innerHTML =
     				xmlDoc.getElementsByTagName("abstract")[0].childNodes[0].nodeValue;
+					
 					}
     			}
     		</script>
