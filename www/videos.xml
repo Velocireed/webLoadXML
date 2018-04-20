@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<articles> 
+	<article id="test1">  
+		<title>Test 1</title>  
+		<thumbnail>/img/1024x768.png</thumbnail>  
+		<author>Joe Author</author>  
+		<date-created>4/18/18</date-created>
+		<email>jauthor@example.com</email>  
+		<abstract>A short article about writing XML articles.</abstract>  
+		<keywords>XML,articles,how to</keywords>  
+		<content>Lorem ipsum sit amet dolor</content>
+		<slug>test-1</slug>
+	</article>
+	<article id="test2">  
+		<title>Test 2</title>  
+		<thumbnail>/img/1024x768.png</thumbnail>  
+		<author>Joe Author</author>  
+		<date-created>4/18/18</date-created>
+		<email>jauthor@example.com</email>  
+		<abstract>A short article about writing XML articles.</abstract>  
+		<keywords>XML,articles,how to</keywords>  
+		<content>Lorem ipsum sit amet dolor</content>
+		<slug>test-2</slug>
+	</article>
+</articles>
